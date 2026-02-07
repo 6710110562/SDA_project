@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Your Result</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  width:100vw;
+  height:100vh;
+  font-family: Arial, sans-serif;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+/* กล่องหลัก */
+.result-box{
+  position:relative;
+
+  width:100vw;
+  height:100vh;
+
+  text-align:center;
+}
+
+
+/* รูปพืช */
+.result-img{
+  width:80%;
+}
+
+
+/* icon บน */
+.icon{
+  position:absolute;
+
+  width:50px;
+  height:50px;
+
+  background:white;
+  border-radius:12px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  cursor:pointer;
+
+  box-shadow:0 3px 8px rgba(0,0,0,0.25);
+
+  transition:0.2s;
+}
+
+.icon:hover{
+  transform:scale(1.1);
+}
+
+
+/* ซ้ายบน */
+.icon-left{
+  top:20px;
+  left:20px;
+}
+
+
+/* ขวาบน */
+.icon-right{
+  top:20px;
+  right:20px;
+}
+
+
+/* ===== Home ด้านล่าง ===== */
+.home-btn{
+  position:absolute;        /* ลอยบนภาพ */
+
+  bottom:99px;              /* ห่างจากล่าง */
+  left:58%;                 /* กึ่งกลางแนวนอน */
+  transform:translateX(-50%);
+
+  background:#FFFACD;       /* สีปุ่ม */
+  border-width: 1px;
+
+  padding:15px 100px;        /* ขนาดปุ่ม */
+  font-size:22px;           /* ตัวอักษร */
+
+  border-radius:15px;       /* มุมโค้ง */
+  cursor:pointer;           /* เมาส์เป็นมือ */
+
+  box-shadow:0 5px 12px rgba(0,0,0,0.3); /* เงา */
+
+  transition:0.2s;          /* Animation */
+  border: 1px solid black;
+}
+
+.home-btn:hover{
+  transform:translateX(-50%) scale(1.1);
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="result-box">
+
+  <!-- Card -->
+  <div
+    class="icon icon-left"
+    onclick="location.href='card.html'"
+  >
+    🪴
+  </div>
+
+
+  <!-- Stats -->
+  <div
+    class="icon icon-right"
+    onclick="location.href='stats.html'"
+  >
+    📊
+  </div>
+
+
+  <!-- รูป -->
+  <img id="plantImg" class="result-img">
+
+
+  <!-- Home ด้านล่าง -->
+  <div
+    class="home-btn"
+    onclick="location.href='index.html'"
+  >
+    HOME
+  </div>
+
+
+</div>
+
+
+<script>
+
+const result = localStorage.getItem("result");
+
+const plantData = {
+
+  sunflower:{ img:"sunflower.jpeg" },
+  cactus:{ img:"cactus.jpeg" },
+  jasmine:{ img:"jasmine.jpeg" },
+  reed:{ img:"reed.jpeg" },
+  bamboo:{ img:"bamboo.jpeg" }
+
+};
+
+if(result && plantData[result]){
+
+  document.getElementById("plantImg").src =
+    plantData[result].img;
+
+}else{
+
+  console.log("No result");
+
+}
+
+</script>
+
+</body>
+</html>
+
+
+

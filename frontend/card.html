@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Plant Card</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  width:100vw;
+  height:100vh;
+  background:#fdfdfb;
+  font-family: Arial, sans-serif;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+/* กล่องหลัก */
+.card-box{
+  position:relative;
+
+  width:100vw;
+  height:100vh;
+}
+
+
+/* รูปการ์ด */
+.card-box img{
+  width:100%;
+  height:100%;
+
+  object-fit:contain;
+}
+
+
+/* ไอคอนบน */
+.icon{
+  position:absolute;
+
+  width:50px;
+  height:50px;
+
+  background:#fff;
+  border-radius:12px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:16px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  box-shadow:0 3px 8px rgba(0,0,0,0.25);
+
+  transition:0.2s;
+}
+
+.icon:hover{
+  transform:scale(1.1);
+}
+
+
+/* ซ้ายบน */
+.icon-left{
+  top:20px;
+  left:20px;
+}
+
+
+/* ขวาบน */
+.icon-right{
+  top:20px;
+  right:20px;
+}
+
+
+/* ปุ่ม Exit */
+.exit-btn{
+  position:absolute;
+
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+
+  background:#ff6b6b;
+  color:white;
+
+  border:none;
+  border-radius:20px;
+
+  padding:14px 45px;
+
+  font-size:18px;
+  font-weight:bold;
+
+  cursor:pointer;
+
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+
+  transition:0.2s;
+}
+
+.exit-btn:hover{
+  transform:translateX(-50%) scale(1.1);
+  background:#ff4d4d;
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="card-box">
+
+  <!-- รูปการ์ด -->
+  <img src="card.jpeg" alt="Plant Card">
+
+
+  <!-- Home -->
+  <div
+    class="icon icon-left"
+    onclick="location.href='index.html'"
+  >
+    🏠
+  </div>
+
+
+  <!-- Graph -->
+  <div
+    class="icon icon-right"
+    onclick="location.href='stats.html'"
+  >
+    📊
+  </div>
+
+
+  <!-- Exit -->
+  <button
+    class="exit-btn"
+    onclick="location.href='index.html'"
+  >
+    HOME
+  </button>
+
+
+</div>
+
+
+</body>
+</html>
